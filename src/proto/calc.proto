@@ -1,0 +1,47 @@
+syntax = "proto3";
+package calc;
+
+// The Calc  service definition.
+service Calc{
+  //define calc function 
+  rpc Add(AddRequest) returns(AddReply){}
+  rpc Sub(SubRequest) returns(SubReply){}
+  rpc Mult(MultRequest) returns(MultReply){}
+  rpc Div(DivRequest) returns(DivReply){}
+}
+
+message AddRequest{
+  int64 num1 = 1;
+  int64 num2 = 2;
+}
+
+message AddReply{
+  int64 result = 1;
+}
+
+message SubRequest{
+   int64 num1 = 1;
+   int64 num2 = 2;
+}
+
+message SubReply{
+  int64 result = 1;
+}
+
+message MultRequest{
+  int64 num1 = 1;
+  int64 num2 = 2;
+}
+
+message MultReply{
+  int64 result = 1;
+}
+
+message DivRequest{
+  int64 num1 = 1;
+  int64 num2 = 2;
+}
+
+message DivReply{
+  int64 result = 1;
+}

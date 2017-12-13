@@ -4,6 +4,7 @@ go get -u google.golang.org/grpc                             	   //工作目录�
 protoc --go_out=plugins=grpc:./输出目录／ ./*.proto文件所在目录    //将$GOPATH/bin添加到 PATH执行才不会报错（自动生成服务器和客户端的注册函数）
 (如果用$ protoc --go_out=./go/ ./proto/helloworld.proto生成*.pb.go需要自己写服务器和客户端的注册函数）
 
-将生成的*.pb.go文件拷贝到相应的文件夹里
+将生成的proto/*.pb.go文件拷贝到相应的文件夹里(./calc)
+
 go run server/server.go
 go run client/client.go

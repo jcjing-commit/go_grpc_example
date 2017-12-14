@@ -46,11 +46,13 @@ func (s *server) Login(stream calc.Calc_LoginServer) error {
 	for {
 		loginRequest, err := stream.Recv()
 		if err == io.EOF {
+			fmt.Println("name = %v", calc.LoginRequest(*loginRequest).Name)
 			return stream.SendAndClose(&calc.LoginReply{
 				Wellcome: "Wellcome " + calc.LoginRequest(*loginRequest).Name + "!",
 			})
 		}
 		if err != nil {
+			fmt.Println("login is fail, err = %v", err)
 			return err
 		}
 	}

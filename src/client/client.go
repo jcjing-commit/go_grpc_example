@@ -66,6 +66,8 @@ func login(client calc.CalcClient, name string, pwd string) {
 	for _, user := range users {
 		if err := stream.Send(user); err != nil {
 			log.Fatalf("%v.Send(%v) = %v", stream, user, err)
+		} else {
+			log.Fatalf("login oK")
 		}
 	}
 }
@@ -90,5 +92,4 @@ func main() {
 	div(c, 24, 2)
 
 	login(c, "grpc", "123")
-
 }

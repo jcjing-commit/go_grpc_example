@@ -16,7 +16,6 @@ pwd
 go get -u google.golang.org/grpc
 
 protoc --go_out=plugins=grpc:. ./proto/calc.proto
-mv ./proto/calc.pb.go ./calc
 echo "OK"
 
 

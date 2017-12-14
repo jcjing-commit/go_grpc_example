@@ -8,6 +8,7 @@ service Calc{
   rpc Sub(SubRequest) returns(SubReply){}
   rpc Mult(MultRequest) returns(MultReply){}
   rpc Div(DivRequest) returns(DivReply){}
+  rpc Login(stream LoginRequest) returns(LoginReply){}
 }
 
 message AddRequest{
@@ -45,3 +46,13 @@ message DivRequest{
 message DivReply{
   int64 result = 1;
 }
+
+message LoginRequest{
+  string name = 1;
+  string pwd = 2;
+}
+
+message LoginReply{
+   string wellcome = 1;
+}
+
